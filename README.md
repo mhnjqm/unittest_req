@@ -1,9 +1,9 @@
 # Atividade: Teste unitário #
 O trabalho baseia-se na geração de código de teste unitário por uma LLM, a partir de um documento de Casos de Uso. Será utilizado um Caso de Uso. A fim de gerar o código de teste unitário, gera-se requisitos de todos os Caso de Uso. Em seguida, gera-se Casos de Teste de todos os requisitos. Depois, gera-se código de teste unitário do Caso De Teste escolhido.
 
-O documento de Casos de Uso é de um projeto web chamado "SuperFrog Scheduler". SuperFrog é o mascote da Universidade Cristã de Texas, e tem participação em vários eventos anualmente, como esportes, mídia e caridades. O projeto tem a função de facilitar o agendamento e administração dos aparecimentos dos alunos que participam como SuperFrog.
+O documento de Casos de Uso é de um projeto web chamado **"SuperFrog Scheduler"**. SuperFrog é o mascote da Universidade Cristã de Texas, e tem participação em vários eventos anualmente, como esportes, mídia e caridades. O projeto tem a função de facilitar o agendamento e administração dos aparecimentos dos alunos que participam como SuperFrog.
 
-O Caso de Uso que será analisado neste trabalho será o Caso de Uso 18: The Spirit Director generates TCU Honorarium (Payment for services) Request Forms.
+O Caso de Uso que será analisado neste trabalho será o **Caso de Uso 18: The Spirit Director generates TCU Honorarium (Payment for services) Request Forms**.
 
 ## Instruções ##
 O trabalho consiste em escrever teste unitário para 1 caso de teste escolhido por mim, usando a biblioteca pytest. Será providenciado o documento de Casos de Uso e todos os artefatos gerados (requisitos e casos de teste). Também deverá ser entregue código de teste unitário gerado por LLM para cada caso de teste. Logo, deverá ser feito:
