@@ -8,7 +8,7 @@ O documento de Casos de Uso é de um projeto web chamado **"SuperFrog Scheduler"
 O Caso de Uso que será analisado neste trabalho será o **Caso de Uso 18: The Spirit Director generates TCU Honorarium (Payment for services) Request Forms**.
 
 ## Instruções ##
-O trabalho consiste em escrever 1 teste unitário, usando a biblioteca pytest. Será providenciado o documento de Casos de Uso e todos os artefatos gerados (requisitos e casos de teste). Também deverá ser entregue código de teste unitário gerado por LLM para cada caso de teste. Logo, deverá ser feito:
+O trabalho consiste em escrever 1 teste unitário, usando a biblioteca pytest. Será providenciado o documento de Casos de Uso (superfrog.pdf) e todos os artefatos intermediários gerados (requisitos e casos de teste) (trabalho_artefatos.md). Também deverá ser entregue código de teste unitário gerado por LLM para cada caso de teste. Logo, deverá ser feito:
 * Código de teste unitário escrito manualmente
 * Codigo de teste unitário gerado por LLM
 
