@@ -1,6 +1,8 @@
 # Trabalho: Teste unitário #
 O trabalho faz parte de uma pesquisa em que envolve geração de código de teste unitário por uma LLM, a partir de um documento de Casos de Uso de um projeto. A fim de gerar o código de teste unitário, são gerados dois artefatos intermediários, os quais são: requisitos de um Caso de Uso e Casos de Teste de todos os requisitos gerados previamente. Finalmente, a LLM é instruída a escrever o código de teste unitário de um Caso De Teste.
 
+![](https://github.com/mhnjqm/unittest_req/blob/master/diagram.png?raw=true)
+
 O documento de Casos de Uso é de um projeto web chamado **"SuperFrog Scheduler"**. SuperFrog é o mascote da Universidade Cristã de Texas, e tem participação em vários eventos anualmente, como esportes, mídia e caridades. O projeto tem a função de facilitar o agendamento e administração dos aparecimentos dos alunos que participam como SuperFrog.
 
 O Caso de Uso que será analisado neste trabalho será o **Caso de Uso 18: The Spirit Director generates TCU Honorarium (Payment for services) Request Forms**.
