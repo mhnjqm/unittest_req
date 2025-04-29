@@ -14,6 +14,8 @@ O código de teste deve passar na execução do pytest.
 
 **Vou saber identificar se os dois códigos são escritos por LLM. Não tente a sorte!**
 
+O Caso de Teste escolhido é o **Caso de Teste 2**.
+
 ### Instalando e rodando o pytest ###
 Caso não tenha o python instalado, baixe o executável do site. Depois da instalação, baixe o pytest usando `pip install pytest` no terminal ou no terminal do VSCode (ou outra ferramenta de sua escolha).
 
