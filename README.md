@@ -17,7 +17,7 @@ O código de teste precisa da implementação do código principal para que rode
 
 **Vou saber identificar se os dois códigos são escritos por LLM. Não tente a sorte!**
 
-O Caso de Teste deste trabalho é o **Caso de Teste 2** (Test Case for FR-2: Generate Reports Based on Input Criteria).
+O Caso de Teste para ser escrito o código de teste é o **Caso de Teste 2** (Test Case for FR-2: Generate Reports Based on Input Criteria).
 
 ### Instalando e rodando o pytest ###
 Caso não tenha o python instalado, baixe o executável do site. Depois da instalação, baixe o pytest usando `pip install pytest` no terminal ou no terminal do VSCode (ou outra ferramenta de sua escolha).
