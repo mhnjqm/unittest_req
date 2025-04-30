@@ -8,20 +8,21 @@ O documento de Casos de Uso é de um projeto web chamado **"SuperFrog Scheduler"
 O Caso de Uso que será analisado neste trabalho será o **Caso de Uso 18: The Spirit Director generates TCU Honorarium (Payment for services) Request Forms**.
 
 ## Instruções ##
-O trabalho consiste em escrever 1 teste unitário, usando a biblioteca pytest. Será providenciado o documento de Casos de Uso (superfrog.pdf) e todos os artefatos intermediários gerados (requisitos e casos de teste) (trabalho_artefatos.md). Também deverá ser entregue código de teste unitário gerado por LLM para cada caso de teste. Logo, deverá ser feito:
+O trabalho consiste em escrever 1 teste unitário, usando a biblioteca pytest. Será providenciado o documento de Casos de Uso (superfrog.pdf) e todos os artefatos intermediários gerados - requisitos e casos de teste - (trabalho_artefatos.md). Também deverá ser entregue código de teste unitário gerado por LLM. Logo, deverá ser entregue:
 * Código de teste unitário escrito manualmente
 * Codigo de teste unitário gerado por LLM
 
-O código de teste deve passar na execução do pytest, então deve-se escrever uma implementação mínima.
+**O código deve passar no teste.**
+O código de teste precisa da implementação do código principal para que rode. Este código pode ser puramente para o teste passe, e não precisa ser uma implementação real. 
 
 **Vou saber identificar se os dois códigos são escritos por LLM. Não tente a sorte!**
 
-O Caso de Teste escolhido é o **Caso de Teste 2**.
+O Caso de Teste deste trabalho é o **Caso de Teste 2** (Test Case for FR-2: Generate Reports Based on Input Criteria).
 
 ### Instalando e rodando o pytest ###
 Caso não tenha o python instalado, baixe o executável do site. Depois da instalação, baixe o pytest usando `pip install pytest` no terminal ou no terminal do VSCode (ou outra ferramenta de sua escolha).
 
-Para rodar o código de teste, use `pytest nome_do_arquivo.py`. O código de teste precisa da implementação do código principal para que rode. Este código pode ser puramente para o teste passe, e não precisa ser uma implementação real do Caso de Teste. **O código deve passar no teste.**
+Para rodar o código de teste, use `pytest nome_do_arquivo.py`.  
 
 
 ## A pesquisa ##
