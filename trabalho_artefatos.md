@@ -1,132 +1,185 @@
 # Artefatos produzidos pela LLM para construção de código de teste unitário #
-A partir do documento de Casos de Uso (superfrog.pdf), pede-se à LLM para gerar um breve resumo do Caso de Uso escolhido, requisitos, e Casos de Teste. Será escolhido 1 Casos de Teste para estudo.
+A partir do documento de Casos de Uso (superfrog.pdf), pede-se à LLM para gerar um breve resumo do Caso de Uso escolhido, requisitos, e Casos de Teste. 
 
 ## Resumo ##
-**Use Case 18: The Spirit Director Generates TCU Honorarium (Payment for Services) Request Forms**
+**UC ID and Name:** UC-18: Generate TCU Honorarium (Payment for services) Request Forms
 
-**Actors:**  
-- Spirit Director
+**Created By:** [Name not specified]
 
-**Preconditions:**  
-- The Spirit Director has access to the system.
-- The necessary data for generating the TCU Honorarium request forms is available.
+**Date Created:** [Date not specified]
+
+**Primary Actor:** Spirit Director
+
+**Secondary Actors:** TCU Payroll Services
+
+**Trigger:** The Spirit Director indicates to generate payment for services request forms for selected SuperFrog Students. (See BR-14).
+
+**Description:** 
+The Spirit Director wants to generate TCU Honorarium (Payment for services) Requests for SuperFrog Students who have completed at least one appearance during a time period. This is so that the SuperFrog Students can get paid by the TCU Payroll Services. The payment requests will then be printed, signed, and sent to the TCU Payroll Services.
+
+**Preconditions:**
+1. The Spirit Director is logged into the System.
+2. The User has the “admin” privilege.
+
+**Postconditions:**
+1. The details of the report are returned and displayed to the Spirit Director.
 
 **Main Scenario:**
-1. The Spirit Director initiates the process to generate TCU Honorarium Request Forms.
-2. The System invokes the “Report generating algorithm” defined in the Associated Information of this use case.
-3. The System generates the TCU Honorarium Request Forms based on the input criteria and conditions specified by the “Report generating parameters.”
-4. The System displays the generated TCU Honorarium (Payment for Services) Request Forms to the Spirit Director for review.
-5. The Spirit Director reviews and validates each generated TCU Honorarium Request Form.
-6. The System delivers the generated report according to the specified report disposition and format as defined in the “Report generating parameters.”
-7. The Spirit Director enters Social Security Numbers (SSNs) for each SuperFrog Student.
-8. The Spirit Director enters the necessary Authorized Codes, including Account, Fund, Dept, and Project.
-9. The Spirit Director confirms the printing of the payment requests.
-10. The System prints all the completed payment requests.
+1. The Spirit Director indicates to generate TCU Honorarium (Payment for services) Request Forms.
+2. The System asks the Spirit Director to provide configurable report generating parameters according to the “Report generating parameters” defined in the Associated Information of this use case.
+3. The Spirit Director enters the required parameters and confirms that she has finished entering.
+4. The System validates the input parameters according to the “Report generating parameters” defined in the Associated Information of this use case.
+5. The System retrieves and displays a list of “Completed” appearance requests within the specified time period, organized by SuperFrog Students.
+6. The Spirit Director validates each “Completed” appearance request and then selects appearance requests to generate TCU Honorarium (Payment for services) Request Forms.
+7. The System generates the TCU Honorarium (Payment for services) Request Forms according to the “Report generating algorithm” defined in the Associated Information of this use case and displays them to the Spirit Director according to the “Report generating parameters” defined in the Associated Information of this use case.
+8. The Spirit Director validates every generated TCU Honorarium (Payment for Services) Request Form.
+9. The System delivers the generated report according to the specified report disposition in the specified format in the “Report generating parameters” defined in the Associated Information of this use case.
+10. The Spirit Director enters SSNs of each SuperFrog Student (BR-14), enters Authorized Codes (Account, Fund, Dept, and Project), and confirms printing.
+11. The System prints all the payment requests.
 
-**Postconditions:**  
-- All TCU Honorarium Request Forms are generated, validated, and printed as specified by the Spirit Director.
+**Report generating parameters:**
+- Report title: TCU Honorarium (Payment for services) Request Forms
+- Data source: The System
+- Data selection criteria: The Spirit Director provides a time period of “Completed” SuperFrog appearances to consider for payroll services.
+- Report visualization: Table displayed in the System
+- Sorting criteria: SuperFrog Student last name
+- Pagination criteria if table visualization is selected: 10 per page
+- Disposition of the report after it is generated: Displayed in the System and printed
+- Format of the generated report: PDF
 
-**Extensions:**  
-- If there are errors in the data or processes, the system should provide appropriate error messages and allow corrections.
-
-This use case describes the process through which the Spirit Director generates and validates honorarium request forms, ensuring all necessary information is captured and printed accurately.
+**Report generating algorithm:**
+- The System only considers the “Completed” appearance requests selected by the Spirit Director within the specified time period (Some “Completed” appearance requests may not be eligible to pay) in step 6.
+- A TCU Honorarium (Payment for Services)
 
 ## Requisitos funcionais ##
-Based on Use Case 18: The Spirit Director Generates TCU Honorarium (Payment for Services) Request Forms, the following functional requirements can be derived:
+1. **User Authentication:**
+   - The system shall allow the Spirit Director to log in with "admin" privileges before accessing the payment request form generation feature.
 
-1. **FR-1: Initiate Honorarium Request Form Generation**  
-   - The System must allow the Spirit Director to initiate the generation of TCU Honorarium Request Forms through a user interface.
-   - This includes selecting relevant parameters that pertain to the services for which payments are requested.
+2. **Indicate Payment Request Generation:**
+   - The system shall provide an option for the Spirit Director to initiate the generation of TCU Honorarium (Payment for services) Request Forms.
 
-2. **FR-2: Generate Reports Based on Input Criteria**  
-   - The System must implement a report generation algorithm that creates TCU Honorarium Request Forms using data entered by the Spirit Director.
-   - This should include data about the services provided and any other variables necessary for the report.
+3. **Input Parameters Collection:**
+   - The system shall prompt the Spirit Director to input configurable report generating parameters, including a specified time period for "Completed" SuperFrog appearances.
 
-3. **FR-3: Display Generated Request Forms**  
-   - The System must display the generated TCU Honorarium Request Forms to the Spirit Director for review after the generation process is complete.
-   - The forms should be clearly formatted and easy to read.
+4. **Input Validation:**
+   - The system shall validate the input parameters to ensure they meet the criteria defined in the "Report generating parameters" section of the use case.
 
-4. **FR-4: Review and Validate Request Forms**  
-   - The System must allow the Spirit Director to validate the content of the generated TCU Honorarium Request Forms, ensuring all details are accurate.
-   - The ability to edit or cancel generated forms should also be available if issues are identified during the review.
+5. **Retrieve Appearance Requests:**
+   - The system shall retrieve a list of "Completed" appearance requests within the specified time period and organize them by SuperFrog Students.
 
-5. **FR-5: Enter Social Security Numbers (SSNs)**  
-   - The System must provide input fields for the Spirit Director to enter the Social Security Numbers (SSNs) of the SuperFrog Students associated with the honorarium.
+6. **Select Appearance Requests:**
+   - The system shall allow the Spirit Director to select specific "Completed" appearance requests for which to generate payment request forms.
 
-6. **FR-6: Enter Authorized Codes**  
-   - The System must require the Spirit Director to input Authorized Codes, including account, fund, department, and project, related to the honorarium requests.
+7. **Generate Request Forms:**
+   - The system shall generate TCU Honorarium (Payment for services) Request Forms based on the selected appearance requests using the defined "Report generating algorithm."
 
-7. **FR-7: Print Payment Requests**  
-   - The System must provide a printing capability for all validated TCU Honorarium Request Forms.
-   - Upon confirmation, the System must print the completed payment requests accurately.
+8. **Display Generated Forms:**
+   - The system shall display the generated payment request forms to the Spirit Director in a table format as specified in the "Report visualization" section.
 
-8. **FR-8: Error Handling**  
-   - The System must implement a mechanism to handle errors during data entry and form generation.
-   - It should display appropriate error messages for any inconsistencies or issues to guide the Spirit Director to correct the data.
+9. **Validate Generated Forms:**
+   - The system shall allow the Spirit Director to validate each generated TCU Honorarium (Payment for services) Request Form.
 
-These functional requirements delineate the precise behaviors and functionalities that the system must exhibit to allow the Spirit Director to successfully generate, review, and print TCU Honorarium Request Forms.
+10. **Report Disposition:**
+    - The system shall display the report in the system and allow for it to be printed in the specified format (PDF).
+
+11. **Enter Additional Details:**
+    - The system shall allow the Spirit Director to enter SSNs of each SuperFrog Student, authorized codes (Account, Fund, Dept, and Project), and confirm printing.
+
+12. **Print Payment Requests:**
+    - The system shall print all the payment request forms after the Spirit Director has confirmed the entries.
+
 
 ## Casos de Teste ##
-Below are the test cases derived from the functional requirements for Use Case 18: The Spirit Director Generates TCU Honorarium (Payment for Services) Request Forms:
+### Test Case 1: User Authentication
+- **Objective:** Verify that the Spirit Director can log in with "admin" privileges.
+- **Precondition:** The Spirit Director is registered in the system.
+- **Steps:**
+  1. Navigate to the login page.
+  2. Enter valid credentials for the Spirit Director with "admin" privileges.
+  3. Click the "Log In" button.
+- **Expected Result:** The Spirit Director is successfully logged in with access to the payment request form generation feature.
 
-**Test Case for FR-1: Initiate Honorarium Request Form Generation**
-- **TC-1.1**: Verify that the system allows the Spirit Director to navigate to the Honorarium Request Form generation section.
-  - **Input**: Click on the "Generate Honorarium Request Form" button.
-  - **Expected Result**: The system should display the input parameter selection interface.
+### Test Case 2: Indicate Payment Request Generation
+- **Objective:** Verify that the Spirit Director can initiate the generation of payment request forms.
+- **Precondition:** The Spirit Director is logged in with "admin" privileges.
+- **Steps:**
+  1. Navigate to the payment request form generation section.
+  2. Click the "Generate Payment Request Forms" button.
+- **Expected Result:** The system prompts the Spirit Director to enter report generating parameters.
 
-**Test Case for FR-2: Generate Reports Based on Input Criteria**
-- **TC-2.1**: Verify that the system generates a TCU Honorarium Request Form with valid input data.
-  - **Input**: Enter valid parameters and click "Generate."
-  - **Expected Result**: The system generates and displays a TCU Honorarium Request Form.
+### Test Case 3: Input Parameters Collection
+- **Objective:** Verify that the system collects configurable report generating parameters.
+- **Precondition:** The Spirit Director has initiated the payment request generation process.
+- **Steps:**
+  1. Enter the specified time period for "Completed" SuperFrog appearances.
+  2. Confirm that parameter entry is complete.
+- **Expected Result:** The system accepts the entered parameters and prepares for validation.
 
-**Test Case for FR-3: Display Generated Request Forms**
-- **TC-3.1**: Verify that the generated TCU Honorarium Request Forms are displayed correctly.
-  - **Input**: Generate a form with valid data.
-  - **Expected Result**: The system displays the form with accurate formatting and visible details.
+### Test Case 4: Input Validation
+- **Objective:** Verify that the system validates the input parameters.
+- **Precondition:** Parameters have been entered for report generation.
+- **Steps:**
+  1. Enter valid parameters.
+  2. Enter invalid parameters (e.g., incorrect date format).
+  3. Confirm the parameters.
+- **Expected Result:** The system accepts valid parameters and rejects invalid ones, prompting for correction.
 
-**Test Case for FR-4: Review and Validate Request Forms**
-- **TC-4.1**: Verify that the Spirit Director can review and validate the generated forms.
-  - **Input**: View a previously generated form.
-  - **Expected Result**: The system allows the Spirit Director to view all fields and prompts for corrections if needed.
+### Test Case 5: Retrieve Appearance Requests
+- **Objective:** Verify that the system retrieves and organizes "Completed" appearance requests.
+- **Precondition:** Valid parameters have been confirmed.
+- **Steps:**
+  1. Confirm the parameters for report generation.
+- **Expected Result:** The system displays a list of "Completed" appearance requests within the specified time period, organized by SuperFrog Students.
 
-- **TC-4.2**: Verify that the Spirit Director can edit the form.
-  - **Input**: Edit one of the fields in the displayed form and save changes.
-  - **Expected Result**: The system updates the form with the new information and reflects the changes on the display.
+### Test Case 6: Select Appearance Requests
+- **Objective:** Verify that the Spirit Director can select specific appearance requests for payment form generation.
+- **Precondition:** A list of "Completed" appearance requests is displayed.
+- **Steps:**
+  1. Select desired appearance requests from the list.
+  2. Confirm selection.
+- **Expected Result:** The system records the selected appearance requests for payment form generation.
 
-**Test Case for FR-5: Enter Social Security Numbers (SSNs)**
-- **TC-5.1**: Verify that the system allows the Spirit Director to enter valid SSNs.
-  - **Input**: Enter a valid SSN.
-  - **Expected Result**: The system accepts the SSN without errors.
+### Test Case 7: Generate Request Forms
+- **Objective:** Verify that the system generates payment request forms based on selected requests.
+- **Precondition:** Appearance requests have been selected.
+- **Steps:**
+  1. Confirm the selection of appearance requests.
+- **Expected Result:** The system generates TCU Honorarium (Payment for services) Request Forms according to the report generating algorithm.
 
-- **TC-5.2**: Verify that the system rejects invalid SSNs.
-  - **Input**: Enter an invalid SSN.
-  - **Expected Result**: The system displays an error message indicating the SSN is invalid.
+### Test Case 8: Display Generated Forms
+- **Objective:** Verify that the system displays the generated payment request forms.
+- **Precondition:** Payment request forms have been generated.
+- **Steps:**
+  1. View the generated request forms in the system.
+- **Expected Result:** The generated forms are displayed in a table format as specified.
 
-**Test Case for FR-6: Enter Authorized Codes**
-- **TC-6.1**: Verify that the system allows the Spirit Director to enter valid Authorized Codes.
-  - **Input**: Enter valid account, fund, department, and project codes.
-  - **Expected Result**: The system accepts all codes and stores them correctly.
+### Test Case 9: Validate Generated Forms
+- **Objective:** Verify that the Spirit Director can validate each generated payment request form.
+- **Precondition:** Payment request forms are displayed.
+- **Steps:**
+  1. Review each generated form.
+  2. Confirm validation.
+- **Expected Result:** The system records validation for each form.
 
-- **TC-6.2**: Verify that the system rejects invalid Authorized Codes.
-  - **Input**: Enter invalid codes.
-  - **Expected Result**: The system displays an error message indicating the codes are invalid.
+### Test Case 10: Report Disposition
+- **Objective:** Verify that the system displays and prints the report in the specified format.
+- **Precondition:** Forms have been validated.
+- **Steps:**
+  1. Confirm the disposition of the report.
+- **Expected Result:** The report is displayed in the system and printed in PDF format.
 
-**Test Case for FR-7: Print Payment Requests**
-- **TC-7.1**: Verify that the system prints the completed payment requests upon confirmation.
-  - **Input**: Confirm printing of a generated form.
-  - **Expected Result**: The system triggers the print job for the completed request.
+### Test Case 11: Enter Additional Details
+- **Objective:** Verify that the Spirit Director can enter additional details (SSNs, authorized codes) for each student.
+- **Precondition:** Report disposition is confirmed.
+- **Steps:**
+  1. Enter SSNs for each SuperFrog Student.
+  2. Enter authorized codes (Account, Fund, Dept, Project).
+  3. Confirm entries.
+- **Expected Result:** The system accepts and records the entered details.
 
-- **TC-7.2**: Verify that the printed output matches the displayed form.
-  - **Input**: Print a form and compare it with the on-screen version.
-  - **Expected Result**: The printed request matches the on-screen display accurately.
-
-**Test Case for FR-8: Error Handling**
-- **TC-8.1**: Verify that the system displays appropriate error messages for invalid data entries.
-  - **Input**: Enter incomplete or incorrect data and attempt to generate the form.
-  - **Expected Result**: The system provides clear error messages indicating the issues that need to be addressed.
-
-- **TC-8.2**: Verify that the system allows corrections after displaying error messages.
-  - **Input**: Correct the entries after receiving error messages and attempt to generate the form again.
-  - **Expected Result**: The system successfully generates the form with the corrected data.
-
-These test cases are designed to ensure that each functional requirement is adequately validated and that the system behaves as expected in various scenarios, encompassing both normal and erroneous conditions.
+### Test Case 12: Print Payment Requests
+- **Objective:** Verify that the system prints all confirmed payment request forms.
+- **Precondition:** Additional details have been entered and confirmed.
+- **Steps:**
+  1. Confirm printing of payment requests.
+- **Expected Result:** The system prints all the payment request forms as confirmed.
