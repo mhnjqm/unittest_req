@@ -20,7 +20,7 @@ O código de teste precisa da implementação do código principal para que rode
 
 **Vou saber identificar se os códigos são escritos por LLM. Não tente a sorte!**
 
-Os Casos de Testes para serem estudados são: **Caso de Teste 5** (Test Case 5: Retrieve Appearance Requests) e **Caso de Teste 7** (Test Case 7: Generate Request Forms).
+Os Casos de Testes para serem estudados são: **Test Case 3: Retrieve Completed Appearance Requests** e **Test Case 5: Generate TCU Honorarium Request Forms**.
 
 ### Instalando e rodando o pytest ###
 Caso não tenha o python instalado, baixe o executável do site. Depois da instalação, baixe o pytest usando `pip install pytest` no terminal ou no terminal do VSCode (ou outra ferramenta de sua escolha).
