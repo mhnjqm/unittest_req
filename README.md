@@ -22,6 +22,8 @@ O código de teste precisa da implementação do código principal para que rode
 
 Os Casos de Testes para serem estudados são: **Test Case 3: Retrieve Completed Appearance Requests** e **Test Case 5: Generate TCU Honorarium Request Forms**.
 
+**Leia o caso de uso e todos os artefatos intermediários (requisitos e casos de testes), e não apenas os casos escolhidos!** Será necessário entender sobre o que se trata o Caso de Uso, o fluxo do processo e o contexto para escrever os testes. Os artefatos intermediários são a chave da construção do código.
+
 ### Instalando e rodando o pytest ###
 Caso não tenha o python instalado, baixe o executável do site. Depois da instalação, baixe o pytest usando `pip install pytest` no terminal ou no terminal do VSCode (ou outra ferramenta de sua escolha).
 
