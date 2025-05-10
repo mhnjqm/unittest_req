@@ -13,7 +13,7 @@ O trabalho consiste em escrever 2 testes unitários, usando a biblioteca pytest,
 * Codigo de teste unitário gerado por LLM para cada caso de teste
 
 Nomeie os arquivos de acordo com seu conteúdo:
-Por exemplo: `teste_llm_caso_5.py`. `teste_manual_caso_5.py`.
+Por exemplo: `teste_llm.py`. `teste_manual.py`.
 
 **O código deve passar no teste.**
 O código de teste precisa da implementação do código principal para que rode. Este código pode ser puramente para o teste passe, e não precisa ser uma implementação real. 
